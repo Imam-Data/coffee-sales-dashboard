@@ -1,84 +1,49 @@
-# Coffee Shop Sales Analysis Dashboard
+# Coffee Sales Dashboard
 
-## Project Overview
-**Role:** Data Analyst  
-**Tools:** Microsoft Excel (Pivot Tables, XLOOKUP, Dashboarding)  
-**Dataset:** Retail Sales Data (2019 - 2022)
+![Dashboard Overview](01_Dashboard_Overview.png)
 
-This project analyzes sales transaction data for a coffee shop chain operating in the United States, Ireland, and the United Kingdom. The goal was to transform raw data into an **interactive dashboard** that helps stakeholders track sales performance, identify customer purchasing behaviors, and optimize product inventory.
+## About The Project
+This dashboard analyzes retail coffee sales data from 2019 to 2022. I built this project entirely in **Excel** to demonstrate how raw data is transformed into actionable business insights—from cleaning and modeling to the final interactive visualization.
 
----
+## The Business Problem
+The goal was to answer three main questions for the stakeholders:
+1.  **Sales Trends:** How is the business performing over time?
+2.  **Top Markets:** Which countries are generating the most revenue?
+3.  **Top Customers:** Who are the top 5 customers driving sales?
 
-## Dashboard Preview
-[![Dashboard Overview](01_Dashboard_Overview.png)](01_Dashboard_Overview.png)
-*(Click the image above to view full resolution)*
+## Tools Used
+* **Microsoft Excel** (Full Stack: Cleaning, Analysis, Visualization)
+* **Formulas:** `XLOOKUP`, `INDEX MATCH`, Nested `IF`
+* **Features:** Pivot Tables, Slicers, Timeline
 
----
+## Project Workflow
 
-## Business Problem
-The company wanted to answer key business questions to improve profitability:
-1.  **Sales Trends:** How has the sales performance changed over the years (2019-2022)?
-2.  **Product Analysis:** Which coffee type (Arabica, Robusta, etc.) generates the most revenue vs. profit?
-3.  **Customer Segmentation:** Who are the top customers and where are they located?
-4.  **Seasonality:** Are there specific months with sales spikes that require better inventory planning?
+### 1. Data Cleaning
+Before analyzing, I made sure the data was clean and ready:
+* **Date Formatting:** Standardized dates to `dd-mmm-yyyy` for accurate time-series analysis.
+* **Duplicate Check:** Ran a strict check to ensure there were no duplicate records (Result: **0 duplicates found**).
+* **Data Enrichment:** Added a **"Loyalty Card Status"** column using logic formulas to categorize members vs. non-members.
 
----
+![Data Cleaning Process](02_Data_Cleaning_Process.png)
 
-## Process & Methodology
-To build this dashboard, I performed the following End-to-End Data Analysis process:
+### 2. Data Modeling (Formula-Based)
+Instead of using the automatic Data Model feature, I manually merged the tables to demonstrate formula logic:
+* Used **`XLOOKUP`** to pull Customer Name and Country into the main table.
+* Used **`INDEX MATCH`** to pull Product Details (a flexible alternative to VLOOKUP).
+* Calculated total sales dynamically within the master dataset.
 
-### 1. Data Gathering & Cleaning
-**See process documentation:** [02_Data_Cleaning_Process.png](02_Data_Cleaning_Process.png)
+![Data Modeling Analysis](03_Data_Modeling_Analysis.png)
 
-* Imported 3 separate datasets: **Orders**, **Customers**, and **Products**.
-* Checked for missing values (NULLs) and data consistency using Filters.
-* Ensured correct data types for Dates and Currency.
+### 3. Dashboard Features
+The final dashboard allows users to interact with the data:
+* **Timeline:** Filter data by specific years or months.
+* **Slicers:** Drill down by Roast Type, Size, and Loyalty Status.
+* **Visuals:** Bar charts for top customers/countries and line charts for trends.
 
-### 2. Data Transformation (Excel Formulas)
-Merged the datasets into a single "Master Sheet" using complex formulas to enable analysis:
-* `XLOOKUP`: To retrieve **Customer Name** and **Country** from the Customer table based on Customer ID.
-* `INDEX-MATCH` / `XLOOKUP`: To fetch **Product Price** and **Profit Margin** from the Product table.
-* `IF` Functions: Created logical columns for loyalty program segmentation.
-* `YEAR` & `MONTH`: Extracted date parts for time-series analysis.
-
-### 3. Data Analysis & Modeling
-**See pivot table logic:** [03_Data_Modeling_Analysis.png](03_Data_Modeling_Analysis.png)
-
-Created aggregated Pivot Tables to calculate key metrics:
-* **Total Sales & Profit** (KPIs).
-* **Sales by Country** (Geographic analysis).
-* **Top 5 Customers** (Customer ranking).
-* **Sales Trends** (Time-series grouping).
-
-### 4. Visualization & Dashboarding
-* Designed a clean, user-friendly interface using a consistent color palette.
-* Built **Interactive Charts** (Line, Bar, Donut) connected to Pivot Tables.
-* Integrated **Slicers** (Roast Type, Size, Loyalty Card) and **Timeline** to allow users to filter data dynamically.
+## Key Insights
+* **US Dominance:** The United States is the biggest market, generating **~$35,000** in sales.
+* **Ireland > UK:** Interestingly, Ireland comes in second with **$6,600**—doubling the revenue of the United Kingdom. This suggests a strong market potential in Ireland.
+* **Top Spenders:** The top 5 customers (led by Allis Wilmore and Brenn Dundredge) have a balanced spending range between $270 - $310.
 
 ---
-
-## Key Findings & Insights
-Based on the analysis, here are the major findings:
-
-* **🇺🇸 Market Dominance:** The **United States** is the largest market, contributing to over 70% of total revenue, followed by Ireland.
-* **Seasonal Spikes:** Sales consistently peak in **Q4 (October - December)**, likely driven by year-end holidays and winter season demand.
-* **Product Preferences:** **Arabica** and **Liberica** are the best-selling coffee types. However, **Robusta** offers competitive profit margins despite lower volume.
-* **Customer Loyalty:** Top 5 customers contribute significantly to revenue; most high-value customers are enrolled in the Loyalty Card program.
-
----
-
-## Recommendations
-1.  **Inventory Management:** Increase stock levels for **Arabica** coffee starting in September to prepare for the Q4 demand surge.
-2.  **Marketing Strategy:** Launch a targeted "US Exclusive" campaign to further penetrate the most profitable market.
-3.  **Upselling:** Offer bundle promotions for **Robusta** coffee to increase its sales volume, leveraging its healthy profit margin.
-
----
-
-## File Structure (Click to View)
-* **Excel File:** [Coffee_Sales_Dashboard_Analysis.xlsx](Coffee_Sales_Dashboard_Analysis.xlsx) - *The complete project file containing Raw Data, Processing, and Dashboard.*
-* **Final Dashboard:** [01_Dashboard_Overview.png](01_Dashboard_Overview.png)
-* **Data Process:** [02_Data_Cleaning_Process.png](02_Data_Cleaning_Process.png)
-* **Pivot Logic:** [03_Data_Modeling_Analysis.png](03_Data_Modeling_Analysis.png)
-
----
-*Created by Imam Ramdhani*
+*Feel free to reach me at: **itsimamr@gmail.com***
